@@ -1,97 +1,14 @@
-@import "tailwindcss";
+---
+import ImageMoi from '../assets/moi_wb.png';
+import ImageMoiCartoon from '../assets/moi_cartoon_wb.png';
+---
 
-html {
-    background-color: #f1f5f9;
-    font-family: sans-serif;
-  }
-  
-  body {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 80ch;
-    padding: 1rem;
-    line-height: 1.5;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  h1 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
-  }
-  .hamburger {
-    padding-right: 20px;
-    cursor: pointer;
-  }
-  
-  .hamburger .line {
-    display: block;
-    width: 40px;
-    height: 5px;
-    margin-bottom: 10px;
-    background-color: #ff9776;
-  }
-  /* Styles de la navigation */
-  
-  .nav-links {
-    width: 100%;
-    top: 5rem;
-    left: 48px;
-    background-color: #ff9776;
-    display: none;
-    margin: 0;
-  }
-  
-  .nav-links a {
-    display: block;
-    text-align: center;
-    padding: 10px 0;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .nav-links a:hover,
-  .nav-links a:focus {
-    background-color: #ff9776;
-  }
-  
-  .expanded {
-    display: unset;
-  }
-  
-  @media screen and (min-width: 636px) {
-    .nav-links {
-      margin-left: 5em;
-      display: block;
-      position: static;
-      width: auto;
-      background: none;
-    }
-  
-    .nav-links a {
-      display: inline-block;
-      padding: 15px 20px;
-    }
-    .hamburger {
-        display: none;
-      }
-  
-  }
-
-  html.dark {
-    background-color: #0d0950;
-    color: #fff;
-  }
-  
-  .dark .nav-links a {
-    color: #fff;
-  }
-
-  @-webkit-keyframes logomorph {
+<div id="mainlogo">
+	<img class="logobottom" src={ImageMoi.src} width="240" />
+	<img class="logotop" src={ImageMoiCartoon.src} width="240"/>
+  </div>
+<style>
+	 @-webkit-keyframes logomorph {
     0% {
       opacity:1;
     }
@@ -152,15 +69,22 @@ html {
     }
     
     #mainlogo {
-      display:block;
+		display: flex;
+    position: relative;
+		justify-content: center;
       text-align: center;
       
       margin:0 auto;
      
     }
-    #mainlogo img {
-      position:absolute;
-      left:0;
+    #mainlogo img.logotop {
+      position: relative;
+      top:0;
+      border-radius: 50%;
+    }
+	#mainlogo img.logobottom {
+      position: absolute;
+      top:0;
       border-radius: 50%;
     }
     
@@ -191,3 +115,5 @@ html {
     }
 
   
+
+</style>

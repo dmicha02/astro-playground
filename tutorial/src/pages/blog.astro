@@ -1,12 +1,30 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import BlogPost from '../components/BlogPost.astro';
-const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
 const pageTitle = "Mon blog d'apprentissage Astro";
+const allPosts = await getCollection("blog");
+
+
 ---
 <BaseLayout pageTitle={pageTitle}>
   <p>Voici où je vais publier mon parcours d'apprentissage d'Astro.</p>
 		<ul>
-         {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+         {allPosts.map((post: any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />)}
     </ul>
+    <button data-confetti-button>Célébrer !</button>
 </BaseLayout>
+
+<script>
+  // Importer des modules npm.
+  import confetti from 'canvas-confetti';
+
+  // Trouver le DOM de notre composant dans la page.
+  const buttons = document.querySelectorAll('[data-confetti-button]');
+
+  // Ajouter l'écouteur d'événement pour déclencher des confettis lorsqu'un bouton est cliqué.
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => confetti());
+  });
+</script>

@@ -1,0 +1,24 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const socialClass = "flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-primary-content shadow-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-neutral-content hover:to-base-content hover:shadow-2xl"
+---
+
+<div class="flex justify-center items-center space-x-6 p-6">
+    <a href="https://www.linkedin.com/in/dorian-michaud/" target="_blank" rel="noopener noreferrer" class="inline-block transition-transform duration-300 ease-in-out hover:translate-y-[-5px]">
+        <div class={socialClass}>
+            <Icon name="fa-brands:linkedin" class="w-5 h-5 text-white" />
+        </div>
+    </a>
+    <a href="https://github.com/dmicha02" target="_blank" rel="noopener noreferrer" class="inline-block transition-transform duration-300 ease-in-out hover:translate-y-[-5px]">
+        <div class={socialClass}>
+            <Icon name="fa-brands:github" class="w-5 h-5 text-white" />
+        </div>
+    </a>
+    <a href="https://medium.com/@dopro" target="_blank" rel="noopener noreferrer" class="inline-block transition-transform duration-300 ease-in-out hover:translate-y-[-5px]">
+        <div class={socialClass}>
+            <Icon name="fa-brands:medium" class="w-5 h-5 text-white" />
+        </div>
+    </a>
+</div>
+

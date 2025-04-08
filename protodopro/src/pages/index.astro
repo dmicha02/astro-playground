@@ -1,0 +1,58 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+import Morphing from '../components/Morphing.astro';
+import Socials from '../components/Socials.astro';
+
+---
+
+<Layout>
+    
+    <Morphing />
+
+    <Socials />
+    <Welcome />
+    <section class="scrolling-section hero overflow-auto" id="about">
+      <Welcome />
+    </section>
+    <Welcome />
+    <section class="scrolling-section hero overflow-auto" id="hero">
+        <Welcome/>
+    </section>
+    <Welcome />
+    <Welcome />
+
+</Layout>
+
+<script > 
+    
+    import { animate, stagger, inView } from "motion";
+    const animateElement = (element: Element) => {
+  animate(
+    element, 
+    { opacity: [0, 1], y: [50, 0] }, 
+    { ease: [0.39, 0.24, 0.3, 1], duration: 1 }
+  );
+};
+
+// Set up the observer that will re-run every time the element enters view
+inView(".scrolling-section", (element) => {
+  animateElement(element);
+  
+  // Clean up the old observer and create a new one when the animation completes
+  return () => {
+    // This callback runs when the element leaves the viewport
+    // The next time it enters, the animation will run again
+  };
+}, {
+  amount: 0.25,
+});
+
+    </script>
+
+<style>
+  .scrolling-section {
+    scroll-margin-top: 70px;
+  }
+
+</style>
