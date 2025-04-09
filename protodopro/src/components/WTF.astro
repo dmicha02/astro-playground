@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+---
+
+<div class="toast toast-top z-1000 invisible" id="easter-egg">
+    <div class="alert alert-success">
+      <span> You find it : 🥚 (2/?)</span>
+    </div>
+  </div>
+
+
+<script type="module">
+  let clickCount = 0;
+  let timeout;
+
+  window.addEventListener('click', () => {
+    clickCount++;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      clickCount = 0;
+    }, 600);
+
+    if (clickCount === 4) {
+      const egg = document.getElementById('easter-egg');
+      console.log('Easter egg activated!', egg);
+      if (egg) egg.className = "toast toast-top z-1000 visible";
+        setTimeout(() => {
+            if (egg) egg.className = "toast toast-top z-1000 invisible";
+        }, 3000);
+      clickCount = 0;
+    }
+  });
+</script>
+
+<!-- <style>
+  .easter-egg {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 2px dashed #888;
+    background: #f9f9f9;
+    font-family: monospace;
+    text-align: center;
+  }
+</style> -->

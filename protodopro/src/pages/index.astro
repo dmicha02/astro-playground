@@ -3,9 +3,15 @@ import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Morphing from '../components/Morphing.astro';
 import Socials from '../components/Socials.astro';
-
 ---
+<!-- 
+   👀 Hé toi, l'inspecteur du code source ! 
+   Tu viens de trouver un petit easter egg 🥚 (1/?)
 
+   Il était plutôt simple à trouver, non ?
+
+   Si tu es là pour regarder comment le site est construit, tout est dispo sur github.
+-->
 <Layout>
     
     <Morphing />
@@ -25,6 +31,7 @@ import Socials from '../components/Socials.astro';
 </Layout>
 
 <script > 
+    console.log("%cHello buddy ! Congrats : 🥚 (3/?)","font-size: 25px;color:green");
     
     import { animate, stagger, inView } from "motion";
     const animateElement = (element: Element) => {

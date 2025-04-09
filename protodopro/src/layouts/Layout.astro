@@ -4,6 +4,7 @@ import ParticlesBG from '../components/ParticlesBG.astro';
 import ThemeSwitcher from '../components/ThemeSwitcher.astro';
 import Menu from '../components/Menu.astro';
 import Footer from '../components/Footer.astro';
+import WTF from '../components/WTF.astro';
 
 ---
 
@@ -19,15 +20,16 @@ import Footer from '../components/Footer.astro';
 	<body class="flex flex-col min-h-screen">
 		
     <ThemeSwitcher/>
-	
+		
 		<div class="h-full w-full flex items-center justify-center">
 			
 		<div class="hero min-h-screen flex flex-col m-auto">
 			<Menu/>
 	  		<ParticlesBG is_dark={true}/>
-				  
+			  <WTF/>
 				  
 			<slot />
+			
 		</div>
 		</div>
 		<Footer/>

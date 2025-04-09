@@ -2,3 +2,7 @@
 @plugin "daisyui" {
   themes: luxury --default, luxury --prefersdark, autumn --light;
 }
+
+canvas{
+  width: 200px;
+}
