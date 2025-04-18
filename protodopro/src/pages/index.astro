@@ -3,6 +3,7 @@ import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Morphing from '../components/Morphing.astro';
 import Socials from '../components/Socials.astro';
+import Aboutme from '../components/Aboutme.astro';
 ---
 <!-- 
    👀 Hé toi, l'inspecteur du code source ! 
@@ -18,8 +19,8 @@ import Socials from '../components/Socials.astro';
 
     <Socials />
     <Welcome />
-    <section class="scrolling-section hero overflow-auto" id="about">
-      <Welcome />
+    <section class="scrolling-section-2 hero overflow-auto" id="about">
+      <Aboutme class="about"/>
     </section>
     <Welcome />
     <section class="scrolling-section hero overflow-auto" id="hero">
@@ -32,8 +33,8 @@ import Socials from '../components/Socials.astro';
 
 <script > 
     console.log("%cHello buddy ! Congrats : 🥚 (3/?)","font-size: 25px;color:green");
-    
-    import { animate, stagger, inView } from "motion";
+  
+    import { animate, stagger, inView, hover } from "motion";
     const animateElement = (element: Element) => {
   animate(
     element, 
@@ -55,7 +56,51 @@ inView(".scrolling-section", (element) => {
   amount: 0.25,
 });
 
-    </script>
+
+const animateElement2 = (element: Element) => {
+animate(
+element,
+// TODO : fix animation
+{ scale: [1, 1.1, 1] ,
+  // x: [-300, -100, 0],
+  // rotate: [0,180, 360],
+  opacity: [1,0,1]
+  },
+// { opacity: [0, 1], y: [50, 0] }, 
+{ ease: "linear", duration: 0.5, },
+);
+
+};
+
+let cards = document.getElementsByClassName('card rolling');
+
+
+inView('div.card.rolling', (element) => {
+  ["motion-safe:transition","motion-safe:transition-transform","motion-safe:transition-all","motion-safe:duration-500", ].forEach((className) => {
+    element.classList.remove(className);
+  });
+animateElement2(element);
+
+// Clean up the old observer and create a new one when the animation completes
+return () => {
+// This callback runs when the element leaves the viewport
+// The next time it enters, the animation will run again
+};
+}, {
+amount: 0.20,
+});
+
+hover("div.card.rolling", (element) => {
+  
+  ["motion-safe:transition","motion-safe:transition-transform","motion-safe:transition-all","motion-safe:duration-500"].forEach((className) => {
+    element.classList.add(className);
+  }); 
+  
+  return () => {
+  }
+})
+</script>
+
 
 <style>
   .scrolling-section {
