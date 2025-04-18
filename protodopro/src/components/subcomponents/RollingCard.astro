@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { title, deg, iconName } = Astro.props;
+// const title = Astro.props.title;
+// const deg = Astro.props.deg as String;
+// const iconName = Astro.props.iconName as String;
+---
+<div class=`card group rolling hover:scale-110 hover:rotate-[3deg] hover:z-100 
+    relative overflow-visible rounded-xl bg-base-200 p-6 shadow-md 
+    hover:shadow-lg hover:bg-base-300`>
+    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-transparent via-transparent to-base-200 transition-all duration-500"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center align-middle pointer-events-none">
+      <Icon name=`fa-solid:${iconName}` class="w-24 h-24 opacity-10 group-hover:rotate-[-5deg] group-hover:transition-all group-hover:duration-700 group-hover:delay-200 group-hover:scale-110 group-hover:opacity-20 " />
+    </div>
+    <div class="relative z-10">
+    <h3 class="text-2xl font-bold mb-4">{title}</h3>
+    <slot/>
+    </div>
+</div>
+
+<!-- <style>
+     .card {
+      transform: rotateY(-10deg);
+      animation: rollIn 0.5s ease-out;
+    }
+  
+    @keyframes rollIn {
+      0% {
+        transform: translateX(-100%) rotateY(-10deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0) rotateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+   -->
+

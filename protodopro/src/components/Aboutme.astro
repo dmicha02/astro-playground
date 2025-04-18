@@ -1,0 +1,53 @@
+---
+// import RollingCard from "./subcomponents/RollingCard.astro";
+import RollingCard from "./subcomponents/RollingCard.astro";
+import { Icon } from "astro-icon/components"
+---
+<!-- TODO : fix content in cards -->
+
+<div class="aboutdiv flex gap-4 justify-center p-10 overflow-hidden motion-safe:transition-all">
+  <div class="aboutgrid card-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<RollingCard title="Scientifique" iconName="microscope" deg="5deg">
+
+    <p class="text-gray-500 group-hover:text-primary">
+      Titulaire d'un doctorat en traitement du signal et des images depuis 2018.
+      J'aime particulièrement le machine learning, l'intelligence artificielle et la vision par ordinateur.
+    </p> 
+</RollingCard>
+
+    <RollingCard title="Tech leader" iconName="tools" deg="5deg">
+        <p class="text-gray-500 group-hover:text-primary">
+          Data scientist spécialisé en computer vision et Deep Learning puis CTO pendant plusieurs années,
+          J'ai managé et piloté des équipes de mécatroniciens, développeurs et de data scientists sur des projets
+          innovants dans le secteur de l'AgTech.
+          J'ai également été responsable de la mise en place de l'infrastructure cloud et des pipelines CI/CD.
+        </p>
+    </RollingCard>
+
+    <RollingCard title="Couteau suisse" iconName="swatchbook" deg="-5deg">
+      <p class="text-gray-500 group-hover:text-primary">
+        Débrouillard, autonome et curieux, j'aime apprendre des nouvelles choses et me former sur des sujets variés.
+        J'aime particulièrement le DevOps, la cybersécurité et le cloud dans tous leurs aspects.
+      </p>
+    </RollingCard>
+
+    <RollingCard title="Papa" iconName="baby-carriage" deg="-5deg" >
+      <p class="text-gray-500 group-hover:text-primary">
+        Père d'une petite fille depuis peu, j'apprends tous les jours à ses côtés les joies de la parentalité.
+      </p>
+  </RollingCard>
+
+    <RollingCard title="Coureur à pied" iconName="running" deg="-5deg">
+        <p class="text-gray-500  group-hover:text-primary">
+          Licencié dans un club de course à pied, j'affectionne toutes les distances sur route du 5km au marathon, le cross-country et le trail.
+        </p>
+    </RollingCard>
+
+    <RollingCard title="Amoureux de la nature" iconName="mountain" deg="5deg">
+        <p class="text-gray-500 group-hover:text-primary">
+          Randonneur et amoureux de la nature, je suis particulièrement attiré par les activités de plein air.
+          J'aime être en contact direct avec la nature, que ce soit en montagne, en forêt ou au bord de la mer.
+        </p>
+    </RollingCard>
+  </div>
+</div>
