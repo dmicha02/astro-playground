@@ -1,0 +1,39 @@
+---
+// This is a simple Astro component to display a "Work in Progress" message with a work barrier.
+---
+<style>
+    .work-in-progress {
+        text-align: center;
+        margin: 2rem auto;
+        font-family: Arial, sans-serif;
+    }
+
+    .barrier {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem auto;
+        width: 100%;
+        max-width: 400px;
+        height: 50px;
+        background: repeating-linear-gradient(
+            45deg,
+            #ffcc00,
+            #ffcc00 10px,
+            #000 10px,
+            #000 20px
+        );
+        border-radius: 5px;
+    }
+
+    .message {
+        font-size: 1.5rem;
+        color: #333;
+        margin-top: 1rem;
+    }
+</style>
+
+<div class="work-in-progress">
+    <div class="barrier"></div>
+    <div class="message">🚧 Work in Progress 🚧</div>
+</div>
