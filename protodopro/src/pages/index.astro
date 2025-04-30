@@ -5,6 +5,13 @@ import Morphing from '../components/Morphing.astro';
 import Socials from '../components/Socials.astro';
 import Aboutme from '../components/Aboutme.astro';
 import InProgress from '../components/InProgress.astro';
+import CV from '../components/CV.astro';
+import Skills from '../components/Skills.astro';
+import Experiences from '../components/Experiences.astro';
+import Diplomes from '../components/Diplomes.astro';
+import Chronos from '../components/Chronos.astro';
+import Timeline from '../components/Timeline.astro';
+import Projects from '../components/Projects.astro';
 ---
 <!-- 
    👀 Hé toi, l'inspecteur du code source ! 
@@ -22,6 +29,19 @@ import InProgress from '../components/InProgress.astro';
     <Welcome />
     <section class="scrolling-section-2 hero overflow-auto" id="about">
       <Aboutme class="about"/>
+    </section>
+    <CV/>
+    <section class="scrolling-section hero overflow-auto" id="skills">
+      <Skills/>
+    </section>
+    <section class="scrolling-section hero overflow-auto" id="expes">
+      <Experiences/>
+    </section>
+    <section class="scrolling-section hero overflow-auto" id="diplomes">
+      <Diplomes/>
+    </section>
+    <section class="scrolling-section hero overflow-auto" id="projects">
+      <Projects/>
     </section>
     <section class="scrolling-section hero overflow-auto" id="hero">
         <InProgress/>
@@ -59,13 +79,13 @@ const animateElement2 = (element: Element) => {
 animate(
 element,
 // TODO : fix animation
-{ scale: [1, 1.1, 1] ,
+{ scale: [1, 1.1, 1, 1] ,
   // x: [-300, -100, 0],
   // rotate: [0,180, 360],
-  opacity: [1,0,1]
+  opacity: [0.5,0.5,0.9,1]
   },
 // { opacity: [0, 1], y: [50, 0] }, 
-{ ease: "linear", duration: 0.5, },
+{ ease: "easeIn", duration: 0.5, },
 );
 
 };
@@ -104,5 +124,12 @@ hover("div.card.rolling", (element) => {
   .scrolling-section {
     scroll-margin-top: 70px;
   }
+
+  .scrolling-section-2 {
+    scroll-margin-top: 70px;
+  }
+
+
+
 
 </style>

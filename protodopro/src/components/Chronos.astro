@@ -1,0 +1,131 @@
+---
+import RollingCard from "./subcomponents/RollingCard.astro";
+
+---
+<div id="gallery">
+    <h2 class="text-3xl font-bold text-center mb-4">Diplômes</h2>
+  <!-- <div class="text-center text-md text-secondary-content">Ci-dessous, mes différents diplômes obtenus et autres certifications.</div> -->
+    <section class="img-group-container">
+        <div>
+            <ul class="img-group">
+                <li class="img-container">
+                    <RollingCard title="Thèse CIFRE" iconName="user-graduate" deg="5deg">
+                        <div class="flex flex-col gap-2 text-sm text-gray-500 group-hover:text-primary transition-colors duration-300">
+                          <p class="font-medium text-base text-gray-500 group-hover:text-primary">Thèse en traitement du signal et des images</p>
+                          <p class="text-gray-500">Institut de recherche XLIM - Quadra Informatique</p>
+                          <p class="text-gray-500 italic">Soutenue et obtenue en 2018</p>
+                        </div>
+                        <p class="mt-4 text-gray-600 group-hover:text-primary font-light leading-relaxed transition-colors duration-300">
+                          Indexation bio-inspirée pour la recherche d'images par similarité.
+                        </p>
+                      </RollingCard>
+                      <h3>2018</h3>
+                </li>
+                <li class="img-container">
+                    <RollingCard title="Master" iconName="user-graduate" deg="5deg">
+                        <div class="text-gray-500 group-hover:text-primary gap-4">
+                          <p>Master Informatique, Multimédia, Télécommunication</p>
+                          <p>UFR Sciences Fondamentales et Appliquées - Université de Poitiers</p>
+                          <p>Major de promotion, obtenue en 2015</p>
+                        </div>
+                          <p class="text-gray-500 group-hover:text-primary">
+                            Programme
+                          </p> 
+                      </RollingCard>
+                      <h3>2015</h3>
+                </li>
+                <li class="img-container">
+                    <RollingCard title="License" iconName="user-graduate" deg="5deg">
+                        <div class="text-gray-500 group-hover:text-primary gap-4">
+                          <p>License Electronique et Signal</p>
+                          <p>UFR Sciences Fondamentales et Appliquées - Université de Poitiers</p>
+                          <p>Obtenue en 2013</p>
+                        </div>
+                          <p class="text-gray-500 group-hover:text-primary">
+                            Programme
+                          </p> 
+                      </RollingCard>
+                      <h3>2013</h3>
+                </li>
+                <li class="img-container">
+                    <RollingCard title="DUT" iconName="user-graduate" deg="5deg">
+                        <div class="text-gray-500 group-hover:text-primary gap-4">
+                          <p>Génie Electrique et Informatique Industrielle</p>
+                          <p>IUT Angoulême - Université de Poitiers</p>
+                          <p>Obtenue en 2012</p>
+                        </div>
+                          <p class="text-gray-500 group-hover:text-primary">
+                            Programme
+                          </p> 
+                      </RollingCard>
+                      <h3>2012</h3>
+                </li>
+            </ul>
+        </div>
+    </section>
+  </div>
+
+  <script type="module">
+    import { animate, scroll, inView } from "https://cdn.jsdelivr.net/npm/motion@12.9.0/+esm";
+
+    const group = document.querySelector(".img-group");
+    const items = document.querySelectorAll(".img-container");
+
+    scroll(
+        animate(group, {
+            transform: ["none", `translateX(-${(items.length - 1) * 100}vw)`]
+        }),
+        {
+            target: group,
+            // axis: "y",
+            // offset: ["start center", "end center"]
+        }
+    );
+</script>
+
+<style>
+    #gallery {
+        width: 98vw;
+    }
+
+    .img-group-container {
+        height: 200vh;
+        position: relative;
+    }
+
+    .img-group-container > div {
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+        height: 75vh;
+    }
+
+    .img-group {
+        display: flex;
+        
+    }
+
+    .img-container {
+        display: flex;
+        width: 50vw;
+        height: auto;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .img-container h3 {
+        margin: 0;
+        font-size: 50px;
+        font-weight: 700;
+        letter-spacing: -3px;
+        line-height: 1.2;
+        position: relative;
+        bottom: 30px;
+        display: inline-block;
+        z-index: 10;
+        color: var(--color-accent);
+    }
+
+</style>

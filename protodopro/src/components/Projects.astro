@@ -1,0 +1,87 @@
+---
+// import RollingCard from "./subcomponents/RollingCard.astro";
+import Socials from "./Socials.astro";
+import RollingCard from "./subcomponents/RollingCard.astro";
+import { Icon } from "astro-icon/components"
+---
+<!-- TODO : fix content in cards -->
+<div class="flex flex-col mx-auto px-4 py-1 max-w-6xl overflow-hidden"> 
+  <h2 class="text-3xl font-bold text-center mb-4">Quelques projets</h2>
+  <div class="text-center text-md text-secondary-content">Voici un aperçu de différents projets sur lesquels j'ai travaillé.</div>
+<div class="aboutdiv flex gap-4 justify-center p-10 overflow-hidden motion-safe:transition-all">
+  <div class="aboutgrid card-container grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6">
+<RollingCard title="Capteur embarqué de détection des anomalies de la vigne par IA (VineMapper)" iconName="camera-retro" deg="5deg">
+
+    <p class="text-gray-500 group-hover:text-primary">
+      Le capteur était équipé d'une caméra industrielle, d'un flash xénon et d'un récepteur GNSS avec RTK.
+      Ce capteur embarquait des modèles de Deep Learning pour faire la détection en temps réel lors du passage des tracteurs.
+      Les informations étaient envoyées sur une plateforme SaaS pour la restitution des données.
+      Après plusieurs années de développement, le capteur a été déployé sur le terrain pour des tests en conditions réelles et utilisés par des partenaires en run.
+      Tout une partie du projet consistait à industrialiser le capteur pour le rendre robuste, fiable et certifié CE (avec un partenaire de développement).
+    </p>
+    
+    <p class="text-gray-500 group-hover:text-primary my-2">
+      <u>Mon rôle au sein du projet :</u>
+      <ul class="list-disc list-inside text-gray-500 group-hover:text-primary my-2">
+        <li>Gestion de projet / management des équipes;</li>
+        <li>Spécifications fonctionnelles et techniques (use cases, MLD, infra cloud, infra logicielle ...);</li>
+        <li>Mise en place de l'infrastructure cloud;</li>
+        <li>Mise en place de la CI/CD;</li>
+        <li>Développements d'outils internes (Web, CLI, applications de bureau);</li>
+        <li>Ajout de features dans le SaaS et sur le capteur.</li>
+        </ul>
+    </p>
+
+    <p class="text-gray-500 group-hover:text-primary my-2">
+      <u>Stack : </u>
+
+      <div class="flex flex-wrap m-2 gap-2">
+        <span class="badge badge-primary badge-sm badge-outline h-fit">ROS2</span>
+        <span class="badge badge-primary badge-sm badge-outline h-fit">Triton Server</span>
+        <span class="badge badge-primary badge-sm badge-outline h-fit">C++</span>
+        <span class="badge badge-primary badge-sm badge-outline h-fit">Python</span>
+        <span class="badge badge-primary badge-sm badge-outline h-fit">YOLO</span>
+        <span class="badge badge-primary badge-sm badge-outline h-fit">GCP (Storage, Pub/Sub, Firestore ...)</span>
+        <span class="badge badge-primary badge-sm badge-outline h-fit">Docker</span>
+        <span class="badge badge-primary badge-sm badge-outline h-fit">AlpineJS</span>
+        <span class="badge badge-primary badge-sm badge-outline h-fit">SQLite</span>
+      </div>
+    </p>
+</RollingCard>
+
+    <RollingCard title="SaaS pour le pilotage d'exploitation viticole" iconName="cloud" deg="5deg">
+        <p class="text-gray-500 group-hover:text-primary">
+         
+        </p>
+    </RollingCard>
+
+    <RollingCard title="Application PWA" iconName="tablet-alt" deg="-5deg">
+      <p class="text-gray-500 group-hover:text-primary">
+       
+      </p>
+    </RollingCard>
+
+    <RollingCard title="CLI" iconName="chevron-right" deg="-5deg" >
+      <p class="text-gray-500 group-hover:text-primary">
+        
+      </p>
+  </RollingCard>
+
+    <RollingCard title="API REST" iconName="slash" deg="-5deg">
+        <p class="text-gray-500  group-hover:text-primary">
+          
+        </p>
+    </RollingCard>
+
+    <RollingCard title="Application Flutter" iconName="mobile-alt" deg="5deg">
+        <p class="text-gray-500 group-hover:text-primary">
+         
+        </p>
+    </RollingCard>
+  </div>
+  
+</div>
+<div class="text-center text-md text-secondary-content">Pour en savoir plus :</div>
+<Socials/>
+</div>
+
