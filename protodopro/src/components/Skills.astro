@@ -130,7 +130,7 @@ function distributeItems(items) {
 <div class="container mx-auto px-4 py-10 max-w-7xl">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Compétences</h2>
     <div class="text-center text-base md:text-lg text-secondary-content mb-8">
-      Voici un aperçu de mes compétences techniques et personnelles.
+      Voici un aperçu de mes compétences acquises ces dernières années.
     </div>
   
     <!-- Category tabs -->
@@ -143,9 +143,9 @@ function distributeItems(items) {
         </a>
       ))}
     </div>
-  
+
     <!-- Word cloud container -->
-    <div id="badge-cloud" class="relative h-[25rem] bg-base-200 rounded-xl p-6 md:p-10 shadow-inner mb-8 overflow-hidden">
+    <div id="badge-cloud" class="relative h-[25rem] bg-base-200 rounded-xl p-6 md:p-10 shadow-inner mb-8 overflow-hidden px-10">
       <!-- All technologies -->
       <div id="all" class="word-cloud absolute inset-0 flex flex-wrap justify-center content-center gap-4 badge-hover-group">
         {distributeItems(allItems).map(item => (
@@ -210,6 +210,40 @@ function distributeItems(items) {
 }
 </style>
 <script>
+      const badgeCloud = document.getElementById('badge-cloud');
+      const wordCloud = document.getElementById('all');
+    const badgeWrappers = wordCloud.querySelectorAll('.badge-wrapper');
+
+    badgeWrappers.forEach(wrapper => {
+      const rect = wrapper.getBoundingClientRect();
+      const parentRect = wordCloud.getBoundingClientRect();
+
+      // Check if the element is in the first column
+      if (rect.left - parentRect.left < 100) {
+        const tooltip = wrapper.querySelector('.tooltip');
+        console.log(tooltip);
+        if (tooltip) {
+          tooltip.classList.add('tooltip-right');
+          tooltip.classList.remove('tooltip-bottom');
+        }
+      }
+      else if (parentRect.right - rect.right < 100) {
+        const tooltip = wrapper.querySelector('.tooltip');
+        console.log(tooltip);
+        if (tooltip) {
+          tooltip.classList.add('tooltip-left');
+          tooltip.classList.remove('tooltip-bottom');
+        }
+      }
+      else if (parentRect.bottom -rect.bottom < 80) {
+        const tooltip = wrapper.querySelector('.tooltip');
+        console.log(tooltip);
+        if (tooltip) {
+          tooltip.classList.add('tooltip-top');
+          tooltip.classList.remove('tooltip-bottom');
+        }
+      }
+    });
     // Tab switching functionality
     document.querySelectorAll('.tab').forEach(tab => {
         tab.addEventListener('click', () => {

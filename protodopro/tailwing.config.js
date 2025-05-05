@@ -5,7 +5,9 @@ module.exports = {
       "./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}",
     ],
     theme: {
-      extend: {colors: {
+      extend: {
+        backgroundOpacity: ['active'],
+        colors: {
         "primary-color": "var(--primary-color)",
         "secondary-color": "var(--secondary-color)",
         "customcolor1": "var(--customcolor1)"
