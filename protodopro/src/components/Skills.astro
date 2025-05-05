@@ -1,0 +1,283 @@
+---
+// Combine all technologies and tools
+// TODO : refactor this file
+// TODO : work on tooltip description
+// TODO : add bold to font when i am expert in a field
+const langs = [
+    { name: "JavaScript", description: "Développement Web pour plusieurs projets professionnels et personnels. Backend dans un contexte professionnel avec Node.JS. " },
+    { name: "TypeScript", description: "Développement de SaaS avec Next.JS dans un contexte professionnel." },
+    { name: "HTML / CSS", description: "Développement Web pour plusieurs projets professionnels et personnels." },
+    { name: "Python", description: "Maitrise du langage : PoC, API REST, middleware, backend, Data science, ..." },
+    { name: "C++", description: "Bonne connaissance du langage. Utilisation notable avec ROS2 sur un projet de capteur avec IA embarquée. Peu pratiqué dernièrement." },
+    { name: "Shell (Bash, zsh)", description: "Très bonne connaissance en scripting et en utilisation de terminaux." },
+    { name: "SQL", description: "Bonne connaissance du langage (principalement utilisé avec PostgreSQL) pour faire des requêtes complexes (jointure, filtrage, ordering, aggrégation ...)" },
+];
+
+const frameworks = [
+    { name: "React", description: "Utilisation pour du développement Web et d'application de bureau." },
+    { name: "Node.js", description: "Utilisation dans de nombreux projets (pour le backend)." },
+    { name: "Electron.js", description: "Pour le développement d'application de bureau dans un contexte professionnel." },
+    { name: "Astro", description: "Utilisation de la technologie pour ce portfolio." },
+    { name: "Flutter", description: "Bonne connaissance du framework pour le développement mobile (avec déploiement sur les stores)." },
+    { name: "Next.JS", description: "Framework utilisé pour différents SaaS en prod." },
+    { name: "Flask", description: "Pour le développement d'API interne et publique." },
+    { name: "FastAPI", description: "Pour le développement d'API interne et publique." },
+    { name: "NiceGUI", description: "Pour le développement d'une application de configuration de capteur avant leur déploiement."},
+    { name: "DaisyUI", description: "Framework frontend préféré. Notamment utilisé dans ce portfolio. Utilisation conjointe avec TailwindCSS."},
+    { name: "TailwindCSS", description: "Framework CSS préfére pout avoir rendu impeccable sans effort. Utilisation conjointe avec DaisyUI."},
+    { name: "Kivy", description: "Pour le développement d'une interface pour le firmware d'un capteur emabrqué."},
+    { name: "ROS / ROS2", description: "Software d'un module de désherbage par laser et d'un capteur embarqué avec IA"}
+];
+
+const ml = [
+    { name: "TensorFlow", description: "Dans de nombreux projets R&D." },
+    { name: "PyTorch", description: "Dans de nombreux projets R&D." },
+    { name: "Triton server", description: "Pour l'inférence conteneurisé sur un capteur embarqué." },
+    { name: "OpenCV", description: "Dans de nombreux projets R&D." },
+    { name: "Scikit-learn", description: "Dans de nombreux projets R&D." },
+    { name: "Pandas", description: "Dans de nombreux projets R&D." },
+    { name: "NumPy", description: "Dans de nombreux projets R&D." },
+    { name: "TensorBoard", description: "Dans de nombreux projets R&D." },
+    { name: "Jupyter Notebook", description: "Dans de nombreux projets R&D." }
+];
+
+const bdd = [
+    { name: "PostgreSQL", description: "Utilisation de la technologie en prod, avec PostGIS dans un contexte professionnel." },
+    { name: "MySQL", description: "Utilisation dans un contexte professionnel et personnel" },
+    { name: "SQLite", description: "Pour des petites applications nécessitant un stockage structuré en local." },
+    { name: "Firestore", description: "Maitrise de la technologie pour du stockage semi-structurée dans différentes applications Web et mobiles. Avec Flutter, Node.js, Python..." },
+    { name: "Prisma", description: "ORM utilisé pour plusieurs SaaS en prod dans un contexte professionnel. Utilisation avancée." },
+    { name: "NoSQL", description: "Connaissance des différentes solutions du marché (orientées graphes, documents, clé/valeur, colonnes)" },
+    { name: "Modélisation de données", description: "Pour de nombreux projets, j'étais en charge de créer la structure de données et de faire les migrations." },
+    { name: "Dbdiagram/dbdocs", description: "Pour la création de modèles de données et pour les documenter" },
+];
+
+const collab = [
+    { name: "Clickup", description: "Utilisation pour la gestion de projet." },
+    { name: "Discord", description: "Pour communiquer, administration de serveurs." },
+    { name: "Trello", description: "Pour les TODO list, peu utilisé dernièrement" },
+    { name: "Google Workspace", description: "Mail, stockage de documents, bureautique, visios..." },
+    { name: "Notion", description: "brainstorming, prise de notes, réunions ..." }
+];
+
+const devops_cloud = [
+    { name: "Google Cloud Platform", description: "Connaissances approfondies des solutions proposées (IAM, Logging, Cloud Build, Cloud Run, Storage, Firestore, Cloud Functions, Schedulers, Pub/Sub, Cloud SQL...). Déploiement et maintien de plusieurs applications en prod." },
+    { name: "Firebase", description: "Connaissances approfondies des solutions proposées (Firestore, Storage, Hosting, A/B Testing, App distribution ...)" },
+    { name: "Terraform", description: "Bonnes connaissances pour le déploiement d'infrastructure sur GCP"},
+    { name: "OpenTofu", description: "Solution d'IaaC préféree, utilisé pour le déploiement d'infrastructure sur GCP."},
+    { name: "Docker", description: "Utilisé pour le déploiement de plusieurs applications en prod et pour le développement local. Connaissances approfondies."},
+    { name: "Codemagic", description: "Très bonnes connaissances pour le déploiement d'application Flutter sur les stores."},
+    { name: "CircleCI", description: "Utilisé quelques fois pour le déploiement de nouvelles version d'aplications de bureau"},
+    { name: "Git (bitbucket/ github)", description: "Très bonnes connaissances pour la gestion de versions : Gitflow, pull request, merge, rebase... Quelques tests de Github Actions pour le CI/CD"},
+    { name: "Linux (Debian/Arch)", description: "Bonnes connaissances du fonctionnement de Linux (principalement Ubuntu, mais aussi Mint ou Manjaro)"},
+    // { name: "Windows"}
+];
+
+const skills = [
+    { name: "Autonomie & débrouillardise", description: "J'essaye toujours de trouver des solutions à des problèmes, aussi complexes soient-ils." },
+    { name: "Curiosité & envie d'apprendre", description: "J'aime apprendre et tester de nouvelles choses." },
+    { name: "Rigueur & sens du détail", description: "Je déteste faire un travail à la va-vite (même si cela arrive inévitablement)" },
+    { name: "Franchise & bienveillance", description: "Pour que l'environement de travail soit agréable il faut être franc et bienveillant selon moi. Je m'impose donc de l'être." },
+    { name: "Esprit d'équipe & écoute", description: "J'aime travailler dans un climat agréable. L'entraide est importante pour moi." },
+    { name: "Capacités rédactionnelles", description: "J'ai un gout pour la communication et la mise en forme de résultats, rapports ..." },
+    { name: "Force de proposition", description: "Je sais exposer mes idées sans les imposer quand j'estime cela nécessaire." }
+];
+
+// Define all categories with their content and colors
+const categories = {
+    "Langages & frameworks": { 
+        items: [...langs, ...frameworks],
+        color: "bg-[#737B24] text-white"
+    },
+    // "Frameworks": { 
+    //     items: frameworks,
+    //     color: "badge-secondary"
+    // },
+    "Machine Learning": { 
+        items: ml,
+        color: "badge-accent"
+    },
+    "Base de Données": { 
+        items: bdd,
+        color: "badge-secondary"
+    },
+    "Collaboration": { 
+        items: collab,
+        color: "badge-neutral"
+    },
+    "DevOps & Cloud": { 
+        items: devops_cloud,
+        color: "bg-[#499380] text-white"
+    },
+    "Soft Skills": { 
+        items: skills,
+        color: "badge-primary"
+    }
+};
+
+// Combine all items for the "All" view
+const allItems = Object.entries(categories).flatMap(([category, { items, color }]) => 
+    items.map(item => ({ ...item, category, badgeClass: color}))
+);
+
+// Function to get a balanced distribution of items
+function distributeItems(items) {
+    // Shuffle the array for random distribution
+    return [...items].sort(() => Math.random() - 0.5);
+}
+---
+
+<div class="container mx-auto px-4 py-10 max-w-7xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Compétences</h2>
+    <div class="text-center text-base md:text-lg text-secondary-content mb-8">
+      Voici un aperçu de mes compétences acquises ces dernières années.
+    </div>
+  
+    <!-- Category tabs -->
+    <div class="tabs tabs-bordered flex flex-wrap justify-center gap-2 mb-8">
+      <a  aria-label="All categories" class="tab tab-active" data-category="all">Tout</a>
+      {Object.keys(categories).map((category) => (
+        <a aria-label={`Category ${category}`} class="tab gap-2 flex items-center" data-category={category}>
+          <div class={`badge ${categories[category].color} badge-sm`} />
+          {category}
+        </a>
+      ))}
+    </div>
+
+    <!-- Word cloud container -->
+    <div id="badge-cloud" class="relative h-[25rem] bg-base-200 rounded-xl p-6 md:p-10 shadow-inner mb-8 overflow-hidden px-10">
+      <!-- All technologies -->
+      <div id="all" class="word-cloud absolute inset-0 flex flex-wrap justify-center content-center gap-4 badge-hover-group">
+        {distributeItems(allItems).map(item => (
+          <div class="badge-wrapper transform transition-transform duration-300 hover:scale-110 hover:z-50" data-category={item.category}>
+            {item.description ? (
+              <div class="tooltip tooltip-bottom">
+                <div class="tooltip-content bg-gray-200 max-w-xs hidden sm:block">
+                  <div class="text-black text-sm">{item.description}</div>
+                </div>
+                <span class={`badge ${item.badgeClass} badge-lg opacity-80 hover:opacity-100 font-medium`}>
+                  {item.name}
+                </span>
+              </div>
+            ) : (
+              <span class={`badge ${item.badgeClass} badge-lg opacity-80 hover:opacity-100 font-medium`}>
+                {item.name}
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+  
+      <!-- Category-specific clouds (hidden by default) -->
+      {Object.entries(categories).map(([categoryName, { items, color }]) => (
+        <div id={categoryName} class="word-cloud absolute inset-0 hidden flex flex-wrap justify-center content-center gap-4 mt-4 badge-hover-group">
+          {distributeItems(items).map(item => (
+            <div class="badge-wrapper transform transition-transform duration-300 hover:scale-110 hover:z-50" data-category={item.category}>
+              {item.description ? (
+                <div class="tooltip tooltip-bottom">
+                  <div class="tooltip-content bg-gray-200 max-w-xs">
+                    <div class="text-black text-sm">{item.description}</div>
+                  </div>
+                  <span class={`badge ${color} badge-lg opacity-80 hover:opacity-100 font-medium`}>
+                    {item.name}
+                  </span>
+                </div>
+              ) : (
+                <span class={`badge ${color} badge-lg opacity-80 hover:opacity-100 font-medium`}>
+                  {item.name}
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+  
+<style>
+    /* .badge-hover-group:hover .badge-wrapper {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+.badge-hover-group:hover .badge-wrapper:not(:hover):has(~ .badge-wrapper:hover),
+.badge-hover-group:hover .badge-wrapper:not(:hover):has(+ .badge-wrapper:hover) {
+  opacity: 0.3;
+  filter: blur(2px);
+} */
+.badge-wrapper.dimmed {
+  opacity: 0.9;
+  filter: blur(1px);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+</style>
+<script>
+      const badgeCloud = document.getElementById('badge-cloud');
+      const wordCloud = document.getElementById('all');
+    const badgeWrappers = wordCloud.querySelectorAll('.badge-wrapper');
+
+    badgeWrappers.forEach(wrapper => {
+      const rect = wrapper.getBoundingClientRect();
+      const parentRect = wordCloud.getBoundingClientRect();
+
+      // Check if the element is in the first column
+      if (rect.left - parentRect.left < 100) {
+        const tooltip = wrapper.querySelector('.tooltip');
+        console.log(tooltip);
+        if (tooltip) {
+          tooltip.classList.add('tooltip-right');
+          tooltip.classList.remove('tooltip-bottom');
+        }
+      }
+      else if (parentRect.right - rect.right < 100) {
+        const tooltip = wrapper.querySelector('.tooltip');
+        console.log(tooltip);
+        if (tooltip) {
+          tooltip.classList.add('tooltip-left');
+          tooltip.classList.remove('tooltip-bottom');
+        }
+      }
+      else if (parentRect.bottom -rect.bottom < 80) {
+        const tooltip = wrapper.querySelector('.tooltip');
+        console.log(tooltip);
+        if (tooltip) {
+          tooltip.classList.add('tooltip-top');
+          tooltip.classList.remove('tooltip-bottom');
+        }
+      }
+    });
+    // Tab switching functionality
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Update active tab
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab-active'));
+            tab.classList.add('tab-active');
+            
+            // Show/hide appropriate word cloud
+            const category = tab.getAttribute('data-category');
+            document.querySelectorAll('.word-cloud').forEach(cloud => {
+                cloud.classList.add('hidden');
+            });
+            
+            if (category === 'all') {
+                document.getElementById('all').classList.remove('hidden');
+            } else {
+                document.getElementById(category).classList.remove('hidden');
+            }
+        });
+    });
+
+
+    const container = document.getElementById('badge-cloud');
+  const wrappers = container.querySelectorAll('.badge-wrapper');
+
+  wrappers.forEach(wrapper => {
+    wrapper.addEventListener('mouseenter', () => {
+      wrappers.forEach(w => {
+        if (w !== wrapper) w.classList.add('dimmed');
+      });
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+      wrappers.forEach(w => w.classList.remove('dimmed'));
+    });
+  });
+</script>

@@ -1,0 +1,89 @@
+---
+// import RollingCard from "./subcomponents/RollingCard.astro";
+import RollingCard from "./subcomponents/RollingCard.astro";
+import { Icon } from "astro-icon/components"
+---
+<!-- TODO : fix content in cards -->
+<div class="container mx-auto px-4 py-10 max-w-6xl"> 
+<h2 class="text-3xl font-bold text-center mb-4">Expériences professionnelles</h2>
+<div class="text-center text-md text-secondary-content">Ci-dessous, mes expériences professionnelles depuis ma thèse.</div>
+<div class="aboutdiv flex gap-4 justify-center p-10 overflow-hidden motion-safe:transition-all">
+  
+  <div class="aboutgrid card-container grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="lg:col-span-2 col-start-1 lg:col-start-1 lg:row-start-1">
+  <RollingCard title="CTO Hands-On" iconName="rocket" deg="5deg">
+    <div class="text-gray-500 group-hover:text-primary gap-4">
+      <p class="text-primary font-semibold">Green Shield Technology</p>
+      <p class="text-primary italic">2021-Mai 2025</p>
+    </div>
+      <p class="text-gray-500 group-hover:text-primary">
+        Mon rôle consistait à superviser les équipes techniques, définir la stratégie technologique de l'entreprise, et participer activement aux projets clés de l'entreprise :
+        <ul class="ml-10 list-disc text-gray-500 group-hover:text-primary">
+        <li>Capteur embarqué pour la détection des maladies de la vigne en temps réel;</li>
+        <li>Application mobile facilitant les relevés agronomiques ainsi que leur standardisation;</li>
+        <li>SaaS permettant d'optimiser la gestion d'expoitations viticoles (agrégation des données, visualisation, génération de rapports, etc.);</li>
+        <li>Module de désherbage laser pour le maraîchage.</li>
+      </ul></p>
+
+      <p class="text-gray-500 group-hover:text-primary mt-5">
+        Mes autres tâches principales consistaient en :
+        <ul class="ml-10 list-disc text-gray-500 group-hover:text-primary">
+        <li>la mise en place de l'infrastructure cloud de l'entreprise;</li>
+        <li>la création des différents modèles de données;</li>
+        <li>la mise en place des pipelines CI/CD des différentes applications;</li>
+        <li>la mise en place de la stratégie de sécurité des données;</li>
+        <li>guider les développements en matières d'IA (R&D et prod).</li>
+      </ul>
+      </p> 
+
+
+  </RollingCard>
+</div>
+
+<div class="col-span-2 col-start-1 lg:col-start-2 lg:row-start-2">
+  <RollingCard title="Data Scientist, Computer Vision" iconName="images" deg="5deg">
+    <div class="text-gray-500 group-hover:text-primary gap-4">
+      <p class="text-primary font-semibold">Green Shield Technology</p>
+      <p class="text-primary italic">Novembre 2018-2021</p>
+    </div>
+      <p class="text-gray-500 group-hover:text-primary">
+        Mon rôle consistait à travailler sur tous les sujets proches des données :
+        <ul class="ml-10 list-disc text-gray-500 group-hover:text-primary">
+        <li>Développement de PoC de détection ou segmentation de pestes (mauvaises herbes, insectes, maladies) sur des images;</li>
+        <li>Mise en place de solution interne pour faciliter les travaux de récoltes de données;</li>
+        <li>Participation aux projets R&D en lien avec les données (images hyperspectrales, thermiques, de drones ; séries temporelles, spectres ...);</li>
+        <li>Développement d'application Web & Mobiles : démonstrateurs, versions beta de plateforme pour externes ...</li>
+      </ul>
+    </p>
+  </RollingCard>
+  </div>
+  <div class="col-span-2 col-start-1 lg:col-start-1 lg:row-start-3">
+  <RollingCard title="Doctorant en traitement d'images" iconName="graduation-cap" deg="5deg">
+    <div class="text-gray-500 group-hover:text-primary gap-4">
+      <p class="text-primary font-semibold">We+ (anciennement Quadra Informatique)</p>
+      <p class="text-primary italic">Octobre 2015 - Novembre 2018</p>
+    </div>
+      <p class="text-gray-500 group-hover:text-primary">
+        Mon rôle consistait à travailler sur la recherche d'images par similarité et l'indexation de petites bases de données expertes sans connaissance a priori, en utilisant des méthodes bio-inspirées.
+        Voici les tâches principales que j'ai effectuées durant cette période :
+        <ul class="ml-10 list-disc text-gray-500 group-hover:text-primary">
+          <li>Veille et recherches bibliographiques scientifiques dans les sujets suivants : indexation de bases de données, descripteurs visuels, CNN, active learning...;</li>
+          <li>Développements de PoC autour de la problématique de la thèse;</li>
+          <li>Tests et mises en places de méthodes innovantes; </li>
+          <li>Présentations des résultats auprès de mes pairs :
+            <ul class="ml-15 text-gray-500 group-hover:text-primary">
+            <li>- Conférence internationale MultiMedia Modeling 2018 (MMM); <a aria-label="MMM2018 conference paper" href="https://link.springer.com/chapter/10.1007/978-3-319-73603-7_5" target="_blank">🔗</a></li>
+            <li>- Article dans un journal international : Signal Processing: Image Communication ;<a aria-label="Signal Processing Image Communication paper" href="https://www.sciencedirect.com/science/article/abs/pii/S092359651830105X?via%3Dihub" target="_blank">🔗</a> </li>
+          </ul>
+          </li>
+          
+        </ul>
+      </p> 
+  </RollingCard>
+  </div>
+
+  </div>
+  
+</div>
+</div>
+

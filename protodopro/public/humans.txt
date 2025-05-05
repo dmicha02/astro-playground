@@ -1,0 +1,5 @@
+This site is built as an opportunity to test Astro framework.
+
+Creator: Dorian Michaud
+Date: 2025
+From: France

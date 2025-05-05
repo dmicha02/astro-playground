@@ -1,4 +1,57 @@
-<footer class="footer sm:footer-horizontal footer-center glass text-base-content p-4">
+---
+import Modal from "./Modal.astro";
+import Socials from "./Socials.astro";
+---
+
+<Modal id="modal_legal" title="Mentions légales">
+  <p class="text-gray-500 group-hover:text-primary my-2">
+    Ce site accessible à l'URL <a href="/" class="link link-hover text-primary">https://www.dopro.info</a> est un portfolio personnel propriété de Dorian Michaud.
+    Les informations fournies sur ce site sont à titre informatif uniquement.
+    Les liens externes présents sur ce site ne sont pas sous le contrôle de l'auteur.
+    Pour toute question, veuillez me contacter via l'adresse email de contact fourni sur le site web.
+  </p>
+
+  <p class="text-gray-500 group-hover:text-primary my-2">
+    <u>Hébergeur :</u>
+    <ul class="list-disc list-inside text-gray-500 group-hover:text-primary my-2">
+      <li>Netlify Inc.</li>
+      <li>Adresse : 2325 3rd St, San Francisco, CA 94107, États-Unis</li>
+      <li>Téléphone : +1 (415) 418-1000</li>
+      <li>Site web : <a href="https://www.netlify.com" class="link link-hover text-primary">www.netlify.com</a></li>
+    </ul>
+  </p>
+
+
+</Modal>
+
+<Modal id="modal_contact" title="Contact">
+  <p class="text-gray-500 group-hover:text-primary my-2">
+    Vous pouvez me contacter par email à l'adresse suivante : <a class="link link-hover text-primary" href="mailto:dorian.michaud.pro@gmail.com">dorian.michaud.pro@gmail.com</a>
+  </p>
+</Modal>
+
+<Modal id="modal_infos" title="Informations sur le site">
+  <p class="text-gray-500 group-hover:text-primary my-2">
+    Ce site est propulsé par <a href="https://astro.build/" class="link link-hover text-primary" target="_blank">Astro</a>, <a href="https://tailwindcss.com/" class="link link-hover text-primary" target="_blank">Tailwind CSS</a> et 
+    <a href="https://daisyui.com/" class="link link-hover text-primary" target="_blank">DaisyUI</a>.
+  </p>
+
+  <p class="text-gray-500 group-hover:text-primary my-2">
+    Le code source est disponible sur <a href="https://github.com/dmicha02/astro-playground" class="link link-hover text-primary" target="_blank">Github</a>
+  </p>
+</Modal>
+
+<footer class="footer sm:footer-horizontal footer-center bg-base-200 text-base-content p-4">
+  
+  <nav>
+    <nav class="grid grid-flow-col gap-4">
+      <a class="link link-hover font-semibold" aria-label="Affiche les mentions légales" onclick="modal_legal.showModal()">Mentions légales</a>
+      <a class="link link-hover font-semibold" aria-label="Afficher les moyens de contacts" onclick="modal_contact.showModal()">Contact</a>
+      <a class="link link-hover font-semibold" aria-label="Affiche d'autres informations" onclick="modal_infos.showModal()"> Autres informations</a>
+      <a class="link link-hover font-semibold" href="/security.txt" target="_blank" aria-label="Fichier security.txt">Security.txt</a>
+      <a class="link link-hover font-semibold" href="/" aria-label="Retour à l'accueil">Accueil</a>
+    </nav>
+    <nav class=""><Socials/></nav>
   <aside>
     <p>Copyright © {new Date().getFullYear()} - Dorian Michaud, tous droits réservés.</p>
   </aside>
