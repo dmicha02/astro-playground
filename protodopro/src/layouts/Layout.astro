@@ -71,6 +71,6 @@ import WTF from '../components/WTF.astro';
 import { animate, scroll } from "motion";
 
 scroll(animate(".progress", { scaleX: [0, 1] }), {
-	target: document.querySelector("body"),
+	target: document.querySelector("body") || undefined,
 })
 </script>

@@ -1,0 +1,8 @@
+---
+import RollingCard from "../subcomponents/RollingCard.astro";
+import { Icon } from "astro-icon/components"
+const { title, iconName } = Astro.props;
+---
+<RollingCard title=`${title}` iconName=`${iconName}` deg="5deg">
+<slot/>
+</RollingCard>

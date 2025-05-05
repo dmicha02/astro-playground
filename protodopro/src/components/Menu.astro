@@ -65,7 +65,7 @@ const homeClass="text-lg font-medium capitalize scale-100 transition-all duratio
     if (isMobile()) return; // Skip animation on mobile
 
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
+    if(navbar === null) return;
     if (scrollTop === 0) {
       animate(navbar, { x: "-100%" }, {
         duration: 0.3,
