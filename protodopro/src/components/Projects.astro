@@ -15,7 +15,17 @@ allProjects = allProjects.sort((a, b) => a.data.id - b.data.id);
 ---
 <div class="flex flex-col mx-auto px-4 py-1 max-w-6xl overflow-hidden"> 
   <h2 class="text-3xl font-bold text-center mb-4">Quelques projets</h2>
-  <div class="text-center text-md text-secondary-content">Voici un aperçu de différents projets sur lesquels j'ai travaillé.</div>
+  <div class="text-center text-md text-secondary-content">
+    Voici un aperçu de différents projets sur lesquels j'ai travaillé.
+    <br/>
+    La description n'est pas exhaustive, mais elle vous donnera une idée de ce que j'ai fait.
+    <br/>
+    Contactez-moi si vous souhaitez plus de détails sur un projet en particulier.
+    <br/>
+    Allez sur mon github pour plus de projets.
+    <br/>
+
+  </div>
 <div class="aboutdiv flex gap-4 justify-center p-10 overflow-hidden motion-safe:transition-all">
   <div class="aboutgrid card-container grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6">
     {allProjects.map((project: any) => <Project title={`${project.data.title}`} iconName={`${project.data.iconName}`}>

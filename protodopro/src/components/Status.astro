@@ -1,0 +1,16 @@
+---
+const { status, msg, ...rest } = Astro.props;
+const textClass = `text-${status}`;
+const statusClass = `status-${status}`;
+---
+
+<div class="absolute top-[38%] left-[52%] flex flex-row items-center justify-center gap-2 mt-4 text-info stroke-info">
+<div class="inline-grid *:[grid-area:1/1]">
+    <div class="status status-info animate-ping"></div>
+    <div class="status status-info"></div>
+</div> 
+<!-- <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M 50 150 L 100 100 L 160 100" fill="none" stroke="text-info" stroke-width="2"/>
+</svg> -->
+{msg}
+</div>
