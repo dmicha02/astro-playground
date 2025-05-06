@@ -10,6 +10,8 @@ import Skills from '../components/Skills.astro';
 import Experiences from '../components/Experiences.astro';
 import Diplomes from '../components/Diplomes.astro';
 import Projects from '../components/Projects.astro';
+import Status from '../components/Status.astro';
+import Github from '../components/Github.astro';
 ---
 <!-- 
    👀 Hé toi, l'inspecteur du code source ! 
@@ -22,7 +24,7 @@ import Projects from '../components/Projects.astro';
 <Layout>
     
     <Morphing />
-
+    <Status status="info" msg="Formation en cours"/>
     <Socials />
     <Welcome />
     <section class="scrolling-section hero overflow-auto" id="about">
@@ -40,9 +42,11 @@ import Projects from '../components/Projects.astro';
     </section>
     <section class="scrolling-section hero overflow-auto" id="projects">
       <Projects/>
+      
     </section>
+    <Github/>
     <section class="scrolling-section hero overflow-auto" id="hero">
-        <InProgress/>
+      <InProgress/>
     </section>
 
 </Layout>
