@@ -1,12 +1,13 @@
 ---
-import ImageMoi from '../assets/moi_wb.png';
-import ImageMoiCartoon from '../assets/moi_cartoon_wb.png';
+import ImageMoi from '../assets/moi_wb.webp';
+import ImageMoiCartoon from '../assets/moi_cartoon_wb.webp';
 ---
 
 <div id="mainlogo">
 	<img alt="photo de Dorian" class="logobottom" src={ImageMoi.src} width="240" />
 	<img alt="cartoon de Dorian" class="logotop" src={ImageMoiCartoon.src} width="240"/>
-  </div>
+</div>
+
 <style>
 	 @-webkit-keyframes logomorph {
     0% {
@@ -69,9 +70,9 @@ import ImageMoiCartoon from '../assets/moi_cartoon_wb.png';
     }
     
     #mainlogo {
-		display: flex;
-    position: relative;
-		justify-content: center;
+      display: flex;
+      position: relative;
+      justify-content: center;
       text-align: center;
       
       margin:0 auto;

@@ -10,42 +10,42 @@ const langs = [
     { name: "Python", description: "Maitrise du langage : PoC, API REST, middleware, backend, Data science, ..." },
     { name: "C++", description: "Bonne connaissance du langage. Utilisation notable avec ROS2 sur un projet de capteur avec IA embarquée. Peu pratiqué dernièrement." },
     { name: "Shell (Bash, zsh)", description: "Très bonne connaissance en scripting et en utilisation de terminaux." },
-    { name: "SQL", description: "Bonne connaissance du langage (principalement utilisé avec PostgreSQL) pour faire des requêtes complexes (jointure, filtrage, ordering, aggrégation ...)" },
+    { name: "SQL", description: "Bonne connaissance du (principalement utilisé avec PostgreSQL) pour faire des requêtes complexes (jointure, filtrage, ordering, aggrégation ...)" },
 ];
 
 const frameworks = [
-    { name: "React", description: "Utilisation pour du développement Web et d'application de bureau." },
-    { name: "Node.js", description: "Utilisation dans de nombreux projets (pour le backend)." },
+    { name: "React", description: "Utilisé pour du développement Web et d'application de bureau." },
+    { name: "Node.js", description: "Utilisé dans de nombreux projets (pour le backend)." },
     { name: "Electron.js", description: "Pour le développement d'application de bureau dans un contexte professionnel." },
-    { name: "Astro", description: "Utilisation de la technologie pour ce portfolio." },
+    { name: "Astro", description: "Utilisé de la technologie pour ce portfolio." },
     { name: "Flutter", description: "Bonne connaissance du framework pour le développement mobile (avec déploiement sur les stores)." },
     { name: "Next.JS", description: "Framework utilisé pour différents SaaS en prod." },
     { name: "Flask", description: "Pour le développement d'API interne et publique." },
     { name: "FastAPI", description: "Pour le développement d'API interne et publique." },
     { name: "NiceGUI", description: "Pour le développement d'une application de configuration de capteur avant leur déploiement."},
-    { name: "DaisyUI", description: "Framework frontend préféré. Notamment utilisé dans ce portfolio. Utilisation conjointe avec TailwindCSS."},
-    { name: "TailwindCSS", description: "Framework CSS préfére pout avoir rendu impeccable sans effort. Utilisation conjointe avec DaisyUI."},
+    { name: "DaisyUI", description: "Framework frontend préféré, notamment utilisé dans ce portfolio. Utilisation conjointe avec TailwindCSS."},
+    { name: "TailwindCSS", description: "Framework CSS préfére pour avoir un rendu impeccable sans effort. Utilisation conjointe avec DaisyUI."},
     { name: "Kivy", description: "Pour le développement d'une interface pour le firmware d'un capteur emabrqué."},
     { name: "ROS / ROS2", description: "Software d'un module de désherbage par laser et d'un capteur embarqué avec IA"}
 ];
 
 const ml = [
-    { name: "TensorFlow", description: "Dans de nombreux projets R&D." },
-    { name: "PyTorch", description: "Dans de nombreux projets R&D." },
+    { name: "TensorFlow", description: "Utilisé dans de nombreux projets R&D." },
+    { name: "PyTorch", description: "Utilisé dans de nombreux projets R&D." },
     { name: "Triton server", description: "Pour l'inférence conteneurisé sur un capteur embarqué." },
-    { name: "OpenCV", description: "Dans de nombreux projets R&D." },
-    { name: "Scikit-learn", description: "Dans de nombreux projets R&D." },
-    { name: "Pandas", description: "Dans de nombreux projets R&D." },
-    { name: "NumPy", description: "Dans de nombreux projets R&D." },
-    { name: "TensorBoard", description: "Dans de nombreux projets R&D." },
-    { name: "Jupyter Notebook", description: "Dans de nombreux projets R&D." }
+    { name: "OpenCV", description: "Utilisé dans de nombreux projets R&D." },
+    { name: "Scikit-learn", description: "Utilisé dans de nombreux projets R&D." },
+    { name: "Pandas", description: "Utilisé dans de nombreux projets R&D." },
+    { name: "NumPy", description: "Utilisé dans de nombreux projets R&D." },
+    { name: "TensorBoard", description: "Utilisé dans de nombreux projets R&D." },
+    { name: "Jupyter Notebook", description: "Utilisé dans de nombreux projets R&D." }
 ];
 
 const bdd = [
     { name: "PostgreSQL", description: "Utilisation de la technologie en prod, avec PostGIS dans un contexte professionnel." },
     { name: "MySQL", description: "Utilisation dans un contexte professionnel et personnel" },
     { name: "SQLite", description: "Pour des petites applications nécessitant un stockage structuré en local." },
-    { name: "Firestore", description: "Maitrise de la technologie pour du stockage semi-structurée dans différentes applications Web et mobiles. Avec Flutter, Node.js, Python..." },
+    { name: "Firestore", description: "Maitrise de la technologie pour du stockage semi-structuré dans différentes applications Web et mobiles. Avec Flutter, Node.js, Python..." },
     { name: "Prisma", description: "ORM utilisé pour plusieurs SaaS en prod dans un contexte professionnel. Utilisation avancée." },
     { name: "NoSQL", description: "Connaissance des différentes solutions du marché (orientées graphes, documents, clé/valeur, colonnes)" },
     { name: "Modélisation de données", description: "Pour de nombreux projets, j'étais en charge de créer la structure de données et de faire les migrations." },
@@ -57,7 +57,7 @@ const collab = [
     { name: "Discord", description: "Pour communiquer, administration de serveurs." },
     { name: "Trello", description: "Pour les TODO list, peu utilisé dernièrement" },
     { name: "Google Workspace", description: "Mail, stockage de documents, bureautique, visios..." },
-    { name: "Notion", description: "brainstorming, prise de notes, réunions ..." }
+    { name: "Notion", description: "Brainstorming, prise de notes, réunions ..." }
 ];
 
 const devops_cloud = [
@@ -67,7 +67,7 @@ const devops_cloud = [
     { name: "OpenTofu", description: "Solution d'IaaC préféree, utilisé pour le déploiement d'infrastructure sur GCP."},
     { name: "Docker", description: "Utilisé pour le déploiement de plusieurs applications en prod et pour le développement local. Connaissances approfondies."},
     { name: "Codemagic", description: "Très bonnes connaissances pour le déploiement d'application Flutter sur les stores."},
-    { name: "CircleCI", description: "Utilisé quelques fois pour le déploiement de nouvelles version d'aplications de bureau"},
+    { name: "CircleCI", description: "Utilisé quelques fois pour le déploiement de nouvelles versions d'applications de bureau"},
     { name: "Git (bitbucket/ github)", description: "Très bonnes connaissances pour la gestion de versions : Gitflow, pull request, merge, rebase... Quelques tests de Github Actions pour le CI/CD"},
     { name: "Linux (Debian/Arch)", description: "Bonnes connaissances du fonctionnement de Linux (principalement Ubuntu, mais aussi Mint ou Manjaro)"},
     // { name: "Windows"}
@@ -75,11 +75,11 @@ const devops_cloud = [
 
 const skills = [
     { name: "Autonomie & débrouillardise", description: "J'essaye toujours de trouver des solutions à des problèmes, aussi complexes soient-ils." },
-    { name: "Curiosité & envie d'apprendre", description: "J'aime apprendre et tester de nouvelles choses." },
+    { name: "Curiosité & envie d'apprendre", description: "J'aime apprendre continuellement et tester de nouvelles choses." },
     { name: "Rigueur & sens du détail", description: "Je déteste faire un travail à la va-vite (même si cela arrive inévitablement)" },
-    { name: "Franchise & bienveillance", description: "Pour que l'environement de travail soit agréable il faut être franc et bienveillant selon moi. Je m'impose donc de l'être." },
+    { name: "Franchise & bienveillance", description: "Pour que l'environnement de travail soit agréable il faut à mon sens être franc et bienveillant. Je m'impose donc de l'être." },
     { name: "Esprit d'équipe & écoute", description: "J'aime travailler dans un climat agréable. L'entraide est importante pour moi." },
-    { name: "Capacités rédactionnelles", description: "J'ai un gout pour la communication et la mise en forme de résultats, rapports ..." },
+    { name: "Capacités rédactionnelles", description: "J'ai un goût pour la communication et la mise en forme de résultats (rédaction, présentations, rapports ...)" },
     { name: "Force de proposition", description: "Je sais exposer mes idées sans les imposer quand j'estime cela nécessaire." }
 ];
 
@@ -130,7 +130,11 @@ function distributeItems(items) {
 <div class="container mx-auto px-4 py-10 max-w-7xl">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Compétences</h2>
     <div class="text-center text-base md:text-lg text-secondary-content mb-8">
-      Voici un aperçu de mes compétences acquises ces dernières années.
+      Voici un aperçu de mes compétences techniques et humaines (savoir-faire et savoir-être).
+      <br/>
+      Elles sont classées par catégories.
+      <br/>
+      Survolez les puces pour afficher plus d'informations (sur PC seulement).
     </div>
   
     <!-- Category tabs -->
