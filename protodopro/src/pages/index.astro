@@ -3,6 +3,16 @@ import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Morphing from '../components/Morphing.astro';
 import Socials from '../components/Socials.astro';
+import Aboutme from '../components/Aboutme.astro';
+import InProgress from '../components/InProgress.astro';
+import CV from '../components/CV.astro';
+import Skills from '../components/Skills.astro';
+import Experiences from '../components/Experiences.astro';
+import Diplomes from '../components/Diplomes.astro';
+import Projects from '../components/Projects.astro';
+import Status from '../components/Status.astro';
+import Github from '../components/Github.astro';
+import Certifications from '../components/Certifications.astro';
 ---
 <!-- 
    👀 Hé toi, l'inspecteur du code source ! 
@@ -15,51 +25,108 @@ import Socials from '../components/Socials.astro';
 <Layout>
     
     <Morphing />
-
+    <Status status="info" msg="En cours de formation"/>
     <Socials />
     <Welcome />
     <section class="scrolling-section hero overflow-auto" id="about">
-      <Welcome />
+      <Aboutme class="about"/>
     </section>
-    <Welcome />
-    <section class="scrolling-section hero overflow-auto" id="hero">
-        <Welcome/>
+    <CV/>
+    <section class="scrolling-section hero overflow-auto" id="skills">
+      <Skills/>
     </section>
-    <Welcome />
-    <Welcome />
+    <section class="scrolling-section hero overflow-auto" id="expes">
+      <Experiences/>
+    </section>
+    <section class="scrolling-section hero overflow-auto" id="diplomes">
+      <Diplomes/>
+    </section>
+        <section class="scrolling-section hero overflow-auto" id="certifs">
+      <Certifications/>
+    </section>
+    <section class="scrolling-section hero overflow-auto" id="projects">
+      <Projects/>
+      
+    </section>
+    <Github/>
+    <!-- <section class="scrolling-section hero overflow-auto" id="hero">
+      <InProgress/>
+    </section> -->
 
 </Layout>
 
 <script > 
     console.log("%cHello buddy ! Congrats : 🥚 (3/?)","font-size: 25px;color:green");
-    
-    import { animate, stagger, inView } from "motion";
-    const animateElement = (element: Element) => {
-  animate(
-    element, 
-    { opacity: [0, 1], y: [50, 0] }, 
-    { ease: [0.39, 0.24, 0.3, 1], duration: 1 }
-  );
+  
+    import { animate, stagger, inView, hover } from "motion";
+
+
+const animateElement2 = (element: Element) => {
+animate(
+element,
+// TODO : fix animation
+{ scale: [1, 1.1, 1, 1] ,
+  // x: [-300, -100, 0],
+  // rotate: [0,180, 360],
+  opacity: [0.5,0.5,0.9,1]
+  },
+// { opacity: [0, 1], y: [50, 0] }, 
+{ ease: "easeIn", duration: 0.5},
+
+);
+
 };
 
-// Set up the observer that will re-run every time the element enters view
-inView(".scrolling-section", (element) => {
-  animateElement(element);
-  
-  // Clean up the old observer and create a new one when the animation completes
-  return () => {
-    // This callback runs when the element leaves the viewport
-    // The next time it enters, the animation will run again
-  };
+
+inView('div.card.rolling', (element) => {
+  ["motion-safe:transition","motion-safe:transition-transform","motion-safe:transition-all","motion-safe:duration-500", ].forEach((className) => {
+    element.classList.remove(className);
+  });
+animateElement2(element);
+
+// Clean up the old observer and create a new one when the animation completes
+return () => {
+// This callback runs when the element leaves the viewport
+// The next time it enters, the animation will run again
+};
 }, {
-  amount: 0.25,
+amount: 0.20,
 });
 
-    </script>
+inView('div.word-cloud', (element) => {
+animateElement2(element);
+
+// Clean up the old observer and create a new one when the animation completes
+return () => {
+// This callback runs when the element leaves the viewport
+// The next time it enters, the animation will run again
+};
+}, {
+amount: 0.20,
+});
+
+hover("div.card.rolling", (element) => {
+  
+  ["motion-safe:transition","motion-safe:transition-transform","motion-safe:transition-all","motion-safe:duration-500"].forEach((className) => {
+    element.classList.add(className);
+  }); 
+  
+  return () => {
+  }
+})
+</script>
+
 
 <style>
   .scrolling-section {
     scroll-margin-top: 70px;
   }
+
+  .scrolling-section-2 {
+    scroll-margin-top: 70px;
+  }
+
+
+
 
 </style>

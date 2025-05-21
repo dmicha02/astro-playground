@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/LayoutSpecial.astro';
+
+const title = "Wrong way !";
+---
+<style>
+    @keyframes neon-flicker {
+        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+            text-shadow: 
+                0 0 5px #2f9, 
+                0 0 10px #2f9, 
+                0 0 20px #2f9, 
+                0 0 40px #2f9, 
+                0 0 80px #2f9;
+        }
+        20%, 24%, 55% {
+            text-shadow: 
+                0 0 2px #2f9, 
+                0 0 4px #2f9, 
+                0 0 8px #2f9, 
+                0 0 16px #2f9, 
+                0 0 32px #2f9;
+        }
+    }
+
+    @keyframes sparkle {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    /* body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #fff;
+    } */
+
+    .error-container {
+        text-align: center;
+    }
+
+    .error-title {
+        font-size: 10rem;
+        font-weight: bold;
+        color: #2f9;
+        animation: neon-flicker 1.5s infinite alternate;
+    }
+
+    .error-title span {
+        display: inline-block;
+    }
+
+    .neumorphic-button {
+        margin-top: 20px;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        color: #333;
+        background: #e0e0e0;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 5px 5px 15px #bebebe, -5px -5px 15px #ffffff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        animation: sparkle 2s infinite;
+    }
+
+    .neumorphic-button:hover {
+        box-shadow: inset 5px 5px 15px #bebebe, inset -5px -5px 15px #ffffff;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: #aaa;
+        margin-top: 10px;
+    }
+</style>
+<Layout title={title}>
+  
+    <div class="error-container">
+        <div class="error-title">
+            <span>5</span>
+            <span>0</span>
+            <span>0</span>
+        </div>
+        <p>Quelque chose ne va pas, avez-vous essayé de redémarrer la box ?</p>
+        <a href="/" aria-label="Go home">
+            <button class="neumorphic-button" aria-label="return home">Par ici ...</button>
+        </a>
+    </div>
+</Layout>

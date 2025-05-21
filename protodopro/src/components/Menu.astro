@@ -3,43 +3,53 @@ import { Icon } from "astro-icon/components"
 /* Astro component file (Menu.astro) */
 const navClass="fixed top-0 left-0 glass p-4 m-auto shadow-sm hover:shadow-md w-full z-20 text-primary"
 const sectionClass="text-lg font-medium normal-case hover:overline decoration-4 decoration-base-content transition-all duration-300 m-2"
-const homeClass="text-lg font-medium capitalize scale-100 transition-all duration-300 m-2"
+const homeClass="text-lg font-medium capitalize scale-100 transition-all duration-300 m-2 offset-10"
 ---
 <div class={navClass} id="navbar">
   <!-- Home link -->
 
 
   <!-- Desktop Menu -->
-  <div class="hidden md:flex items-center gap-4">
-    <a href="#" class={homeClass}>
+  <div class="hidden md:flex items-center gap-4 align-middle">
+    <a aria-label="Retun home" href="#" class={homeClass}>
       <Icon name="fa-solid:home" class="inline hover:text-base-content hover:scale-120" />
     </a>
-    <a href="#about" class={sectionClass}>Qui suis-je ?</a>
-    <a href="#" class={sectionClass}>CV</a>
-    <a href="#" class={sectionClass}>Articles</a>
-    <a href="#" class={sectionClass}>Projets</a>
-    <a href="#hero" class={sectionClass}>Plus</a>
+    <a aria-label="Section about" href="#about" class={sectionClass}>Qui suis-je ?</a>
+    <a aria-label="Section skills" href="#skills" class={sectionClass}>Compétences</a>
+    <a aria-label="Section experiences" href="#expes" class={sectionClass}>Expériences</a>
+    <a aria-label="Section degrees" href="#diplomes" class={sectionClass}>Diplômes</a>
+    <a aria-label="Section certifications" href="#certifs" class={sectionClass}>Certifications</a>
+    <a aria-label="Section projects" href="#projects" class={sectionClass}>Projets</a>
+    <!-- <a href="#hero" class={sectionClass}>Divers</a> -->
+    <!-- <a aria-label="Download resume" href="../../public/cv_dmichaud.pdf" class={sectionClass} download>
+      <Icon name="fa-solid:download" class="inline hover:text-base-content hover:scale-120" />
+    </a> -->
   </div>
 
   <!-- Mobile Menu Button -->
-  <button id="menuToggle" class="md:hidden">
+  <button id="menuToggle" class="md:hidden" aria-label="Open menu">
     <Icon name="fa-solid:bars" class="text-xl" />
   </button>
 </div>
 
 <!-- Mobile Drawer -->
 <div id="mobileDrawer" class="fixed top-0 right-0 h-full w-2/3 bg-base-200 text-primary transform translate-x-full transition-transform duration-300 z-300 p-6 flex flex-col gap-4 md:hidden">
-  <button id="closeDrawer" class="self-end text-xl">
+  <button id="closeDrawer" class="self-end text-xl" aria-label="Close menu">
     <Icon name="fa-solid:caret-right" />
   </button>
-  <a href="" class={homeClass}>
+  <a  aria-label="Retun home" href="" class={homeClass}>
     <Icon name="fa-solid:home" class="inline hover:text-base-content hover:scale-120" />
   </a>
-  <a href="#about" class={sectionClass}>Qui suis-je ?</a>
-  <a href="#" class={sectionClass}>CV</a>
-  <a href="#" class={sectionClass}>Articles</a>
-  <a href="#" class={sectionClass}>Projets</a>
-  <a href="#hero" class={sectionClass}>Plus</a>
+  <a aria-label="Section about" href="#about" class={sectionClass}>Qui suis-je ?</a>
+  <a aria-label="Section skills" href="#skills" class={sectionClass}>Compétences</a>
+  <a aria-label="Section experiences" href="#expes" class={sectionClass}>Expériences</a>
+  <a aria-label="Section degrees" href="#diplomes" class={sectionClass}>Diplômes</a>
+  <a aria-label="Section certifications" href="#certifs" class={sectionClass}>Certifications</a>
+  <a aria-label="Section projects" href="#projects" class={sectionClass}>Projets</a>
+  <!-- <a href="#hero" class={sectionClass}>Divers</a> -->
+  <a aria-label="Download resume" href="../../public/cv_dmichaud.pdf" class={sectionClass} download>
+    <!-- <Icon name="fa-solid:download" class="inline hover:text-base-content hover:scale-120" /> -->
+  </a>
 </div>
 
 <script>
@@ -57,7 +67,7 @@ const homeClass="text-lg font-medium capitalize scale-100 transition-all duratio
     if (isMobile()) return; // Skip animation on mobile
 
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
+    if(navbar === null) return;
     if (scrollTop === 0) {
       animate(navbar, { x: "-100%" }, {
         duration: 0.3,
