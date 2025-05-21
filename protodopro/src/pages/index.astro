@@ -12,6 +12,7 @@ import Diplomes from '../components/Diplomes.astro';
 import Projects from '../components/Projects.astro';
 import Status from '../components/Status.astro';
 import Github from '../components/Github.astro';
+import Certifications from '../components/Certifications.astro';
 ---
 <!-- 
    👀 Hé toi, l'inspecteur du code source ! 
@@ -40,14 +41,17 @@ import Github from '../components/Github.astro';
     <section class="scrolling-section hero overflow-auto" id="diplomes">
       <Diplomes/>
     </section>
+        <section class="scrolling-section hero overflow-auto" id="certifs">
+      <Certifications/>
+    </section>
     <section class="scrolling-section hero overflow-auto" id="projects">
       <Projects/>
       
     </section>
     <Github/>
-    <section class="scrolling-section hero overflow-auto" id="hero">
+    <!-- <section class="scrolling-section hero overflow-auto" id="hero">
       <InProgress/>
-    </section>
+    </section> -->
 
 </Layout>
 
