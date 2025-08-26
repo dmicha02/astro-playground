@@ -7,10 +7,10 @@ const langs = [
     { name: "JavaScript", description: "Développement Web pour plusieurs projets professionnels et personnels. Backend dans un contexte professionnel avec Node.JS. " },
     { name: "TypeScript", description: "Développement de SaaS avec Next.JS dans un contexte professionnel." },
     { name: "HTML / CSS", description: "Développement Web pour plusieurs projets professionnels et personnels." },
-    { name: "Python", description: "Maitrise du langage : PoC, API REST, middleware, backend, Data science, ..." },
+    { name: "Python", description: "Maitrise du langage : PoC, API REST, middleware, backend, Data science, ...", master: true},
     { name: "C++", description: "Bonne connaissance du langage. Utilisation notable avec ROS2 sur un projet de capteur avec IA embarquée. Peu pratiqué dernièrement." },
-    { name: "Shell (Bash, zsh)", description: "Très bonne connaissance en scripting et en utilisation de terminaux." },
-    { name: "SQL", description: "Bonne connaissance du (principalement utilisé avec PostgreSQL) pour faire des requêtes complexes (jointure, filtrage, ordering, aggrégation ...)" },
+    { name: "Shell (Bash, zsh)", description: "Très bonne connaissance en scripting et en utilisation de terminaux.", master: true },
+    { name: "SQL", description: "Bonne connaissance du langage (principalement utilisé avec PostgreSQL) pour faire des requêtes complexes (jointure, filtrage, ordering, aggrégation ...)" },
 ];
 
 const frameworks = [
@@ -18,9 +18,9 @@ const frameworks = [
     { name: "Node.js", description: "Utilisé dans de nombreux projets (pour le backend)." },
     { name: "Electron.js", description: "Pour le développement d'application de bureau dans un contexte professionnel." },
     { name: "Astro", description: "Utilisé de la technologie pour ce portfolio." },
-    { name: "Flutter", description: "Bonne connaissance du framework pour le développement mobile (avec déploiement sur les stores)." },
+    { name: "Flutter", description: "Bonne connaissance du framework pour le développement mobile (avec déploiement sur les stores)." , master: true},
     { name: "Next.JS", description: "Framework utilisé pour différents SaaS en prod." },
-    { name: "Flask", description: "Pour le développement d'API interne et publique." },
+    { name: "Flask", description: "Pour le développement d'API interne et publique." , master: true},
     { name: "FastAPI", description: "Pour le développement d'API interne et publique." },
     { name: "NiceGUI", description: "Pour le développement d'une application de configuration de capteur avant leur déploiement."},
     { name: "DaisyUI", description: "Framework frontend préféré, notamment utilisé dans ce portfolio. Utilisation conjointe avec TailwindCSS."},
@@ -31,24 +31,24 @@ const frameworks = [
 
 const ml = [
     { name: "TensorFlow", description: "Utilisé dans de nombreux projets R&D." },
-    { name: "PyTorch", description: "Utilisé dans de nombreux projets R&D." },
+    { name: "PyTorch", description: "Utilisé dans de nombreux projets R&D." , master: true},
     { name: "Triton server", description: "Pour l'inférence conteneurisé sur un capteur embarqué." },
-    { name: "OpenCV", description: "Utilisé dans de nombreux projets R&D." },
-    { name: "Scikit-learn", description: "Utilisé dans de nombreux projets R&D." },
+    { name: "OpenCV", description: "Utilisé dans de nombreux projets R&D." , master: true},
+    { name: "Scikit-learn", description: "Utilisé dans de nombreux projets R&D." , master: true},
     { name: "Pandas", description: "Utilisé dans de nombreux projets R&D." },
-    { name: "NumPy", description: "Utilisé dans de nombreux projets R&D." },
+    { name: "NumPy", description: "Utilisé dans de nombreux projets R&D.", master: true },
     { name: "TensorBoard", description: "Utilisé dans de nombreux projets R&D." },
-    { name: "Jupyter Notebook", description: "Utilisé dans de nombreux projets R&D." }
+    { name: "Jupyter Notebook", description: "Utilisé dans de nombreux projets R&D." , master: true}
 ];
 
 const bdd = [
-    { name: "PostgreSQL", description: "Utilisation de la technologie en prod, avec PostGIS dans un contexte professionnel." },
+    { name: "PostgreSQL", description: "Utilisation de la technologie en prod, avec PostGIS dans un contexte professionnel." , master: true},
     { name: "MySQL", description: "Utilisation dans un contexte professionnel et personnel" },
-    { name: "SQLite", description: "Pour des petites applications nécessitant un stockage structuré en local." },
-    { name: "Firestore", description: "Maitrise de la technologie pour du stockage semi-structuré dans différentes applications Web et mobiles. Avec Flutter, Node.js, Python..." },
-    { name: "Prisma", description: "ORM utilisé pour plusieurs SaaS en prod dans un contexte professionnel. Utilisation avancée." },
-    { name: "NoSQL", description: "Connaissance des différentes solutions du marché (orientées graphes, documents, clé/valeur, colonnes)" },
-    { name: "Modélisation de données", description: "Pour de nombreux projets, j'étais en charge de créer la structure de données et de faire les migrations." },
+    { name: "SQLite", description: "Pour des petites applications nécessitant un stockage structuré en local." , master: true},
+    { name: "Firestore", description: "Maitrise de la technologie pour du stockage semi-structuré dans différentes applications Web et mobiles. Avec Flutter, Node.js, Python..." , master: true},
+    { name: "Prisma", description: "ORM utilisé pour plusieurs SaaS en prod dans un contexte professionnel. Utilisation avancée." , master: true},
+    { name: "NoSQL", description: "Connaissance des différentes solutions du marché (orientées graphes, documents, clé/valeur, colonnes)" , master: true},
+    { name: "Modélisation de données", description: "Pour de nombreux projets, j'étais en charge de créer la structure de données et de faire les migrations." , master: true},
     { name: "Dbdiagram/dbdocs", description: "Pour la création de modèles de données et pour les documenter" },
 ];
 
@@ -61,15 +61,22 @@ const collab = [
 ];
 
 const devops_cloud = [
-    { name: "Google Cloud Platform", description: "Connaissances approfondies des solutions proposées (IAM, Logging, Cloud Build, Cloud Run, Storage, Firestore, Cloud Functions, Schedulers, Pub/Sub, Cloud SQL...). Déploiement et maintien de plusieurs applications en prod." },
-    { name: "Firebase", description: "Connaissances approfondies des solutions proposées (Firestore, Storage, Hosting, A/B Testing, App distribution ...)" },
+    { name: "Google Cloud Platform", description: "Connaissances approfondies des solutions proposées (IAM, Logging, Cloud Build, Cloud Run, Storage, Firestore, Cloud Functions, Schedulers, Pub/Sub, Cloud SQL...). Déploiement et maintien de plusieurs applications en prod." , master: true},
+    { name: "AWS", description: "Connaissances de base des solutions proposées (S3, Lambda, EC2 ...)" },
+    {name: "OVH", description: "Utilisé pour des VPC et du stockage."},
+    {name: "Digital Ocean", description: "Utilisé pour des VPC."},
+    { name: "Firebase", description: "Connaissances approfondies des solutions proposées (Firestore, Storage, Hosting, A/B Testing, App distribution ...)" , master: true},
     { name: "Terraform", description: "Bonnes connaissances pour le déploiement d'infrastructure sur GCP"},
-    { name: "OpenTofu", description: "Solution d'IaaC préféree, utilisé pour le déploiement d'infrastructure sur GCP."},
-    { name: "Docker", description: "Utilisé pour le déploiement de plusieurs applications en prod et pour le développement local. Connaissances approfondies."},
-    { name: "Codemagic", description: "Très bonnes connaissances pour le déploiement d'application Flutter sur les stores."},
+    { name: "OpenTofu", description: "Solution d'IaaC préféree, utilisé pour le déploiement d'infrastructure sur GCP.", master: true},
+    { name: "Jenkins", description: "Utilisation dans un contexte de formation. Connaissances de base."},
+    { name: "Ansible", description: "Utilisation dans un contexte de formation. Connaissances de base."},
+    { name: "Docker", description: "Utilisé pour le déploiement de plusieurs applications en prod et pour le développement local. Connaissances approfondies.", master: true},
+    { name: "Codemagic", description: "Très bonnes connaissances pour le déploiement d'application Flutter sur les stores.", master: true},
     { name: "CircleCI", description: "Utilisé quelques fois pour le déploiement de nouvelles versions d'applications de bureau"},
-    { name: "Git (bitbucket/ github)", description: "Très bonnes connaissances pour la gestion de versions : Gitflow, pull request, merge, rebase... Quelques tests de Github Actions pour le CI/CD"},
-    { name: "Linux (Debian/Arch)", description: "Bonnes connaissances du fonctionnement de Linux (principalement Ubuntu, mais aussi Mint ou Manjaro)"},
+    { name: "Gitlab CI/CD", description: "Utilisé quelques fois pour le déploiement de nouvelles versions d'applications"},
+    { name: "Github Actions", description: "Utilisé quelques fois pour le déploiement de nouvelles versions d'applications"},
+    { name: "Git", description: "Très bonnes connaissances pour la gestion de versions : Gitflow, pull request, merge, rebase... Quelques tests de Github Actions pour le CI/CD", master: true},
+    { name: "Linux (Debian/Arch)", description: "Bonnes connaissances du fonctionnement de Linux (principalement Ubuntu, mais aussi Mint ou Manjaro)", master: true},
     // { name: "Windows"}
 ];
 
@@ -132,13 +139,13 @@ function distributeItems(items) {
     <div class="text-center text-base md:text-lg text-secondary-content mb-8">
       Voici un aperçu de mes compétences techniques et humaines (savoir-faire et savoir-être).
       <br/>
-      Elles sont classées par catégories.
+      Elles sont classées par catégories. Je ne suis pas expeert dans toutes mais j'ai déjà travaillé avec chacune d'entre elles.
       <br/>
       Survolez les puces pour afficher plus d'informations (sur PC seulement).
     </div>
   
     <!-- Category tabs -->
-    <div class="tabs tabs-bordered flex flex-wrap justify-center gap-2 mb-8">
+    <div id="reff" class="tabs tabs-bordered flex flex-wrap justify-center gap-2 mb-8">
       <a  aria-label="All categories" class="tab tab-active" data-category="all">Tout</a>
       {Object.keys(categories).map((category) => (
         <a aria-label={`Category ${category}`} class="tab gap-2 flex items-center" data-category={category}>
@@ -155,7 +162,11 @@ function distributeItems(items) {
         {distributeItems(allItems).map(item => (
           <div class="badge-wrapper transform transition-transform duration-300 hover:scale-110 hover:z-50" data-category={item.category}>
             {item.description ? (
-              <div class="tooltip tooltip-bottom">
+              item.master ? 
+              (
+                <div class="indicator">
+                <span class="indicator-item transparent">⭐</span>
+                <div class="tooltip tooltip-bottom">
                 <div class="tooltip-content bg-gray-200 max-w-xs hidden sm:block">
                   <div class="text-black text-sm">{item.description}</div>
                 </div>
@@ -163,6 +174,16 @@ function distributeItems(items) {
                   {item.name}
                 </span>
               </div>
+              </div>
+              ) :
+              (<div class="tooltip tooltip-bottom">
+                <div class="tooltip-content bg-gray-200 max-w-xs hidden sm:block">
+                  <div class="text-black text-sm">{item.description}</div>
+                </div>
+                <span class={`badge ${item.badgeClass} badge-lg opacity-80 hover:opacity-100 font-medium`}>
+                  {item.name}
+                </span>
+              </div>)
             ) : (
               <span class={`badge ${item.badgeClass} badge-lg opacity-80 hover:opacity-100 font-medium`}>
                 {item.name}
@@ -178,14 +199,28 @@ function distributeItems(items) {
           {distributeItems(items).map(item => (
             <div class="badge-wrapper transform transition-transform duration-300 hover:scale-110 hover:z-50" data-category={item.category}>
               {item.description ? (
+item.master ? 
+              (
+                <div class="indicator">
+                <span class="indicator-item transparent">⭐</span>
                 <div class="tooltip tooltip-bottom">
-                  <div class="tooltip-content bg-gray-200 max-w-xs">
-                    <div class="text-black text-sm">{item.description}</div>
-                  </div>
-                  <span class={`badge ${color} badge-lg opacity-80 hover:opacity-100 font-medium`}>
-                    {item.name}
-                  </span>
+                <div class="tooltip-content bg-gray-200 max-w-xs hidden sm:block">
+                  <div class="text-black text-sm">{item.description}</div>
                 </div>
+                <span class={`badge ${item.badgeClass} badge-lg opacity-80 hover:opacity-100 font-medium`}>
+                  {item.name}
+                </span>
+              </div>
+              </div>
+              ) :
+              (<div class="tooltip tooltip-bottom">
+                <div class="tooltip-content bg-gray-200 max-w-xs hidden sm:block">
+                  <div class="text-black text-sm">{item.description}</div>
+                </div>
+                <span class={`badge ${item.badgeClass} badge-lg opacity-80 hover:opacity-100 font-medium`}>
+                  {item.name}
+                </span>
+              </div>)
               ) : (
                 <span class={`badge ${color} badge-lg opacity-80 hover:opacity-100 font-medium`}>
                   {item.name}
@@ -213,41 +248,89 @@ function distributeItems(items) {
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 </style>
-<script>
-      const badgeCloud = document.getElementById('badge-cloud');
-      const wordCloud = document.getElementById('all');
+<script >
+function adjustTooltips() {
+  // For each visible word cloud
+  document.querySelectorAll('.word-cloud:not(.hidden)').forEach(wordCloud => {
     const badgeWrappers = wordCloud.querySelectorAll('.badge-wrapper');
+    const parentRect = wordCloud.getBoundingClientRect();
 
     badgeWrappers.forEach(wrapper => {
-      const rect = wrapper.getBoundingClientRect();
-      const parentRect = wordCloud.getBoundingClientRect();
+      const tooltip = wrapper.querySelector('.tooltip');
+      if (!tooltip) return;
 
-      // Check if the element is in the first column
+      // Reset tooltip classes
+      tooltip.classList.remove('tooltip-right', 'tooltip-left', 'tooltip-top', 'tooltip-bottom');
+      tooltip.classList.add('tooltip-bottom');
+
+      const rect = wrapper.getBoundingClientRect();
+
+      // Left edge
       if (rect.left - parentRect.left < 100) {
-        const tooltip = wrapper.querySelector('.tooltip');
-        console.log(tooltip);
-        if (tooltip) {
-          tooltip.classList.add('tooltip-right');
-          tooltip.classList.remove('tooltip-bottom');
-        }
+        tooltip.classList.add('tooltip-right');
+        tooltip.classList.remove('tooltip-bottom');
       }
+      // Right edge
       else if (parentRect.right - rect.right < 100) {
-        const tooltip = wrapper.querySelector('.tooltip');
-        console.log(tooltip);
-        if (tooltip) {
-          tooltip.classList.add('tooltip-left');
-          tooltip.classList.remove('tooltip-bottom');
-        }
+        tooltip.classList.add('tooltip-left');
+        tooltip.classList.remove('tooltip-bottom');
       }
-      else if (parentRect.bottom -rect.bottom < 80) {
-        const tooltip = wrapper.querySelector('.tooltip');
-        console.log(tooltip);
-        if (tooltip) {
-          tooltip.classList.add('tooltip-top');
-          tooltip.classList.remove('tooltip-bottom');
-        }
+      // Bottom edge
+      else if (parentRect.bottom - rect.bottom < 80) {
+        tooltip.classList.add('tooltip-top');
+        tooltip.classList.remove('tooltip-bottom');
       }
     });
+  });
+}
+
+// Initial adjustment on page load
+window.addEventListener('DOMContentLoaded', () => {
+  adjustTooltips();
+});
+
+// Adjust tooltips on tab switch
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Update active tab
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab-active'));
+    tab.classList.add('tab-active');
+    
+    // Show/hide appropriate word cloud
+    const category = tab.getAttribute('data-category');
+    document.querySelectorAll('.word-cloud').forEach(cloud => {
+      cloud.classList.add('hidden');
+    });
+    if (category === 'all') {
+      document.getElementById('all').classList.remove('hidden');
+    } else {
+      document.getElementById(category).classList.remove('hidden');
+    }
+    // Adjust tooltips after tab switch
+    setTimeout(adjustTooltips, 50);
+  });
+});
+
+// Badge hover dimming
+const badgeCloud = document.getElementById('badge-cloud');
+function setupBadgeHover() {
+  document.querySelectorAll('.word-cloud:not(.hidden) .badge-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('mouseenter', () => {
+      document.querySelectorAll('.word-cloud:not(.hidden) .badge-wrapper').forEach(w => {
+        if (w !== wrapper) w.classList.add('dimmed');
+      });
+    });
+    wrapper.addEventListener('mouseleave', () => {
+      document.querySelectorAll('.word-cloud:not(.hidden) .badge-wrapper').forEach(w => w.classList.remove('dimmed'));
+    });
+  });
+}
+window.addEventListener('DOMContentLoaded', setupBadgeHover);
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => setTimeout(setupBadgeHover, 50));
+});
+
+      
     // Tab switching functionality
     document.querySelectorAll('.tab').forEach(tab => {
         tab.addEventListener('click', () => {
@@ -259,6 +342,7 @@ function distributeItems(items) {
             const category = tab.getAttribute('data-category');
             document.querySelectorAll('.word-cloud').forEach(cloud => {
                 cloud.classList.add('hidden');
+                console.log(cloud);
             });
             
             if (category === 'all') {
